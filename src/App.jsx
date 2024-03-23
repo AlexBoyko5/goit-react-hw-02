@@ -17,17 +17,16 @@ const Description = () => {
 
 const Feedback = ({ feedback }) => (
 	<div>
-		{/* <h2>Feedback</h2> */}
 		<p>Good:{feedback.good}</p>
 		<p>Neutral:{feedback.neutral}</p>
 		<p>Bad:{feedback.bad}</p>
 	</div>
 );
-const Options = ({ handleFeedback }) => (
+const Options = ({ updateFeedback }) => (
 	<div>
-		<button onClick={() => handleFeedback('good')}>Good</button>
-		<button onClick={() => handleFeedback('neutral')}>Neutral</button>
-		<button onClick={() => handleFeedback('bad')}>Bad</button>
+		<button onClick={() => updateFeedback('good')}>Good</button>
+		<button onClick={() => updateFeedback('neutral')}>Neutral</button>
+		<button onClick={() => updateFeedback('bad')}>Bad</button>
 	</div>
 );
 
@@ -38,14 +37,14 @@ const App = () => {
 		bad: 0,
 	});
 
-	const handleFeedback = (type) => {
-		setFeedback({ ...feedback, [type]: feedback[type] + 1 });
+	const updateFeedback = (feedbackType) => {
+		setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 });
 	};
 
 	return (
 		<div>
 			<Description />
-			<Options handleFeedback={handleFeedback} />
+			<Options updateFeedback={updateFeedback} />
 			<Feedback feedback={feedback} />
 		</div>
 	);
