@@ -20,9 +20,8 @@ const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => (
 		<p>Good:{feedback.good}</p>
 		<p>Neutral:{feedback.neutral}</p>
 		<p>Bad:{feedback.bad}</p>
-		<p>TotalFeedback:{totalFeedback}</p>
-		{/*Крок #5 Add TotalFeedback & Positive feedback*/}
-		<p>PositiveFeedback:{positiveFeedback}%</p>
+		<p>TotalFeedback:{totalFeedback}</p> {/*Крок #5 */}
+		<p>PositiveFeedback:{positiveFeedback}</p>
 	</div>
 );
 const Options = ({ updateFeedback }) => (
