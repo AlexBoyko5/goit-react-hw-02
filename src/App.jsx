@@ -46,10 +46,9 @@ const App = () => {
 		neutral: 0,
 		bad: 0,
 	});
+	const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+	const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
-	{
-		/*Крок #4 Скидає кільк відгук*/
-	}
 	const updateFeedback = (feedbackType) => {
 		if (feedbackType === 'reset') {
 			setFeedback({ good: 0, neutral: 0, bad: 0 });
@@ -60,15 +59,18 @@ const App = () => {
 			});
 		}
 	};
-	const totalFeedback = feedback.good + feedback.neutral + feedback.bad; // Крок #3 вычислен. общее кол-во отзывов
-	const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100); // Крок #5 подсчет % отзывов
+
 	return (
 		<div>
 			<Description />
 			<Options updateFeedback={updateFeedback} />
 			{/*Крок #3 обчислення totalFeedback*/}
 			{totalFeedback > 0 ? (
-				<Feedback feedback={feedback} />
+				<Feedback
+					feedback={feedback}
+					totalFeedback={totalFeedback}
+					positiveFeedback={positiveFeedback}
+				/>
 			) : (
 				<Notificaion />
 			)}
