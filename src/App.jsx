@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
 import './App.css';
@@ -41,17 +41,26 @@ const Notificaion = () => (
 );
 
 const App = () => {
-	const [feedback, setFeedback] = useState({
+	const initialFeedback = {
 		good: 0,
 		neutral: 0,
 		bad: 0,
+	};
+	const savedFeedback = JSON.parse(localStorage.getItem('feedback')); //получ данные из localStorage при загрузке страниц
+	const [feedback, setFeedback] = useState(savedFeedback || initialFeedback); // запускаем State сохраненными данными или начальным состоянием
+	//запис изменен Состояния в localStorage при изменении State
+	//Сохр данные между рендерингаами и после перегруз страниц
+	useEffect(() => {
+		localStorage.setItem('feedback', JSON.stringify(feedback));
+		[feedback];
 	});
+
 	const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 	const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
 	const updateFeedback = (feedbackType) => {
 		if (feedbackType === 'reset') {
-			setFeedback({ good: 0, neutral: 0, bad: 0 });
+			setFeedback(initialFeedback);
 		} else {
 			setFeedback({
 				...feedback,
