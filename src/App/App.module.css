@@ -20,6 +20,15 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* .options-container {
+  display: flex;
+  justify-content: center;
+}
+
+.options-container button {
+  margin: 0 12px;
+} */
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
