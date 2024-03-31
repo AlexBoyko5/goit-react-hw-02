@@ -3,8 +3,9 @@ import Description from '../Components/Description';
 import Feedback from '../Components/Feedback';
 import Options from '../Components/Options/Options';
 import Notification from '../Components/Notification';
-import './App.module.css';
-import '../Components/Options/Options.module.css';
+import './App.css';
+
+// import '../Components/Options/Options.module.css';
 
 // const Description = () => {
 // 	return (

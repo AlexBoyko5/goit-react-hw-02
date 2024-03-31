@@ -1,6 +1,6 @@
-// import React from 'react';
+import styles from './Options.module.css';
 const Options = ({ updateFeedback }) => (
-	<div className="options-container">
+	<div className={styles.optionsContainer}>
 		<button onClick={() => updateFeedback('good')}>Good</button>
 		<button onClick={() => updateFeedback('neutral')}>Neutral</button>
 		<button onClick={() => updateFeedback('bad')}>Bad</button>
