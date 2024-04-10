@@ -1,49 +1,9 @@
 import { useState, useEffect } from 'react';
-import Description from '../Components/Description';
-import Feedback from '../Components/Feedback';
-import Options from '../Components/Options/Options';
-import Notification from '../Components/Notification';
+import Description from '../Description/Description';
+import Feedback from '../Feedback/Feedback';
+import Options from '../Options/Options';
+import Notification from '../Notification/Notification';
 import './App.css';
-
-// import '../Components/Options/Options.module.css';
-
-// const Description = () => {
-// 	return (
-// 		<div>
-// 			<h1>Sip Happens Café</h1>
-// 			<p>
-// 				Please leave your feedback about our service by selecting one of the
-// 				options below.
-// 			</p>
-// 		</div>
-// 	);
-// };
-
-// const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => (
-// 	<div>
-// 		<p>Good:{feedback.good}</p>
-// 		<p>Neutral:{feedback.neutral}</p>
-// 		<p>Bad:{feedback.bad}</p>
-// 		<p>TotalFeedback:{totalFeedback}</p> {/*Крок #5 */}
-// 		<p>PositiveFeedback:{positiveFeedback}</p>
-// 	</div>
-// );
-
-// const Options = ({ updateFeedback }) => (
-// 	<div className="options-container">
-// 		<button onClick={() => updateFeedback('good')}>Good</button>
-// 		<button onClick={() => updateFeedback('neutral')}>Neutral</button>
-// 		<button onClick={() => updateFeedback('bad')}>Bad</button>
-// 		<button onClick={() => updateFeedback('reset')}>Reset</button>{' '}
-// 		{/**Крок #4 Add Reset btn*/}
-// 	</div>
-// );
-
-// const Notifictaion = () => (
-// 	<div>
-// 		<p>No feedback registrated yet</p>
-// 	</div>
-// );
 
 const App = () => {
 	const initialFeedback = {
