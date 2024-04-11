@@ -12,13 +12,14 @@ const App = () => {
 		bad: 0,
 	};
 	const savedFeedback = JSON.parse(localStorage.getItem('feedback')); //получ данные из localStorage при загрузке страниц
-	const [feedback, setFeedback] = useState(savedFeedback || initialFeedback); // запускаем State сохраненными данными или начальным состоянием
+	const [feedback, setFeedback] = useState(savedFeedback || initialFeedback);
+	// запускаем State сохраненными данными или начальным состоянием
+
 	//запись изменен Состояния в localStorage при изменении State
 	//Сохр данные между рендерингаами и после перегруз страниц
 	useEffect(() => {
 		localStorage.setItem('feedback', JSON.stringify(feedback));
-		[feedback];
-	});
+	}, [feedback]);
 
 	const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 	const positiveFeedback =
