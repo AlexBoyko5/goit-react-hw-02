@@ -13,7 +13,7 @@ const App = () => {
 	};
 	const savedFeedback = JSON.parse(localStorage.getItem('feedback')); //получ данные из localStorage при загрузке страниц
 	const [feedback, setFeedback] = useState(savedFeedback || initialFeedback); // запускаем State сохраненными данными или начальным состоянием
-	//запис изменен Состояния в localStorage при изменении State
+	//запись изменен Состояния в localStorage при изменении State
 	//Сохр данные между рендерингаами и после перегруз страниц
 	useEffect(() => {
 		localStorage.setItem('feedback', JSON.stringify(feedback));
