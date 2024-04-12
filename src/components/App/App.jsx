@@ -21,9 +21,9 @@ const App = () => {
 		localStorage.setItem('feedback', JSON.stringify(feedback));
 	}, [feedback]);
 
-	const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+	const totalFeedback = feedback.good + feedback.neutral + feedback.bad; //Вычисление всех отзывов
 	const positiveFeedback =
-		totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
+		totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0; //Вычисление % позитивных отзывов
 
 	const updateFeedback = (feedbackType) => {
 		if (feedbackType === 'reset') {
