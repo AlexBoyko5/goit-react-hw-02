@@ -39,7 +39,10 @@ const App = () => {
 	return (
 		<div>
 			<Description />
-			<Options updateFeedback={updateFeedback} />
+			<Options
+				updateFeedback={updateFeedback}
+				feedbackCount={totalFeedback} //Крок #4 Add Reset btn
+			/>
 			{/*Крок #3 обчислення totalFeedback*/}
 			{totalFeedback > 0 ? (
 				<Feedback
